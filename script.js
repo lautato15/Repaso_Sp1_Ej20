@@ -5,11 +5,16 @@ function play(move) {
     1: "Papel",
     2: "Piedra",
     3: "Tijera",
+    Papel: 1,
+    Piedra: 2,
+    Tijera: 3,
   };
   let PCmove = Math.floor(Math.random() * 3) + 1;
   switch (true) {
     case moves[PCmove] === move:
-      return "";
+      return `La computadora eligió ${moves[PCmove]}. Empataron.`;
+    break;
+    
   }
 }
 
