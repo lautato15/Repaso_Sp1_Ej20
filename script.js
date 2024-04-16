@@ -5,9 +5,6 @@ function play(move) {
     1: "Tijera",
     2: "Piedra",
     3: "Papel",
-    Papel: 1,
-    Piedra: 2,
-    Tijera: 3,
   };
   let PCmove = Math.floor(Math.random() * 3) + 1;
   if (moves[PCmove] === move)
