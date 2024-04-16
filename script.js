@@ -1,21 +1,24 @@
 function play(move) {
-  if (move !== "Papel" || move !== "Piedra" || move !== "Tijera")
+  if (move !== "Papel" && move !== "Piedra" && move !== "Tijera")
     return "Error de parametros";
   let moves = {
-    1: "Papel",
+    1: "Tijera",
     2: "Piedra",
-    3: "Tijera",
+    3: "Papel",
     Papel: 1,
     Piedra: 2,
     Tijera: 3,
   };
   let PCmove = Math.floor(Math.random() * 3) + 1;
-  switch (true) {
-    case moves[PCmove] === move:
-      return `La computadora eligió ${moves[PCmove]}. Empataron.`;
-    break;
-    
-  }
+  if (moves[PCmove] === move)
+    return `La computadora eligió ${moves[PCmove]}. Empataron.`;
+  else if (
+    (move === "Tijera" && moves[PCmove] === "Papel") ||
+    (move === "Piedra" && moves[PCmove] === "Tijera") ||
+    (move === "Papel" && moves[PCmove] === "Piedra")
+  )
+    return `La computadora eligió ${moves[PCmove]}. Ganaste.`;
+  else return `La computadora eligió ${moves[PCmove]}. Perdiste.`;
 }
 
 // Ejercicio 20
